@@ -1,6 +1,6 @@
-use std::fs::File;
 use assert_cmd::Command;
 use predicates::prelude::*;
+use std::fs::File;
 use std::io::Read;
 
 type TestResult = Result<(), Box<dyn std::error::Error>>;
@@ -24,20 +24,32 @@ fn run(args: &[&str], expected_file: &str) -> TestResult {
 
 #[test]
 fn empty_string() -> TestResult {
-    run(&["tests/input/empty.csv"], "tests/expected/empty_string.txt")
+    run(
+        &["tests/input/empty.csv"],
+        "tests/expected/empty_string.txt",
+    )
 }
 
 #[test]
 fn empty_null() -> TestResult {
-    run(&["tests/input/empty.csv", "-n"], "tests/expected/empty_null.txt")
+    run(
+        &["tests/input/empty.csv", "-n"],
+        "tests/expected/empty_null.txt",
+    )
 }
 
 #[test]
 fn key_value_array() -> TestResult {
-    run(&["tests/input/key_value.csv"], "tests/expected/key_value_array.txt")
+    run(
+        &["tests/input/key_value.csv"],
+        "tests/expected/key_value_array.txt",
+    )
 }
 
 #[test]
 fn key_value_hash() -> TestResult {
-    run(&["tests/input/key_value.csv", "-k"], "tests/expected/key_value_hash.txt")
+    run(
+        &["tests/input/key_value.csv", "-k"],
+        "tests/expected/key_value_hash.txt",
+    )
 }

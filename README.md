@@ -8,7 +8,9 @@ csv2json [-k] [-n] <CSV File>
 
 ## Example
 
-### CSV
+### CSV File
+
+tests/input/sample.csv
 
 ```csv
 1,2,3
@@ -19,6 +21,10 @@ z,z,z
 ```
 
 ### Output JSON
+
+```sh
+csv2json tests/input/sample.csv
+```
 
 ```json
 [
@@ -41,6 +47,10 @@ z,z,z
 ```
 
 ### Output JSON with k & n Option
+
+```sh
+csv2json -kn tests/input/sample.csv
+```
 
 ```json
 {
